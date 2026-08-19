@@ -4,7 +4,7 @@ import { readFile } from "node:fs/promises";
 
 test("build output exists and is complete", async () => {
   const html = await readFile("dist/index.html", "utf8");
-  assert.match(html, /<title>THIS WILL FAIL<\/title>/);
+  assert.match(html, /<title>Refactored Octo Umbrella<\/title>/);
 
   const js = await readFile("dist/app.js", "utf8");
   assert.doesNotMatch(js, /__BUILD_ID__/, "build id placeholder was not substituted");
